@@ -1,14 +1,14 @@
 import { responsiveSlider } from "../../lib/slider.js";
+import { sliderItem } from "../../lib/utils.js";
 
 window.addEventListener("DOMContentLoaded", () => {
-  const spanTag = (name) => "<img src='" + name + "'/><br/>";
-
   let dataTags = dataModule.products.map((product) => {
-    return spanTag(product.image);
+    return sliderItem(product.image);
   });
 
-  let slider = document.getElementById("slider");
-  //slider.innerHTML = dataTags;
+  let sliderItems = document.getElementsByClassName("slider-items")[0];
+
+  dataTags.forEach((tag) => sliderItems.appendChild(tag));
 
   responsiveSlider();
 });

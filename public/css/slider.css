@@ -17,6 +17,16 @@
   margin: 15px;
   text-align: center;
   padding: 20px;
+  position: relative;
+}
+
+.slider-item-discount::before {
+  content: attr(data-discount);
+  position: absolute;
+  left: 0px;
+  background-color: #c71621;
+  padding: 10px 7px;
+  color: #fff;
 }
 
 .product-title {

@@ -10,5 +10,5 @@ window.addEventListener("DOMContentLoaded", () => {
 
   dataTags.forEach((tag) => sliderItems.appendChild(tag));
 
-  responsiveSlider();
+  //responsiveSlider();
 });

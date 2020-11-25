@@ -1,1 +1,1 @@
-Responsive Slider with Pure Javascript
+## Responsive Slider with Pure Javascript

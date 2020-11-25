@@ -3,7 +3,7 @@ import { sliderItem } from "../../lib/utils.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   let dataTags = dataModule.products.map((product) => {
-    return sliderItem(product.image);
+    return sliderItem(product);
   });
 
   let sliderItems = document.getElementsByClassName("slider-items")[0];

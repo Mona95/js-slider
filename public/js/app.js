@@ -1,18 +1,23 @@
 import { responsiveSlider } from "../../lib/slider.js";
-import { sliderItem } from "../../lib/utils.js";
+import { sliderItem, createArrows } from "../../lib/utils.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   let dataTags = dataModule.products.map((product) => {
     return sliderItem(product);
   });
 
+  let rightArrow = "fas fa-angle-right",
+    leftArrow = "fas fa-angle-left";
+
   let firstSlider = document.getElementById("first-slider"),
     secondSlider = document.getElementById("second-slider"),
     thirdSlider = document.getElementById("third-slider");
 
-  [firstSlider, secondSlider, thirdSlider].forEach((slider) =>
-    slider.classList.add("slider-container")
-  );
+  [firstSlider, secondSlider, thirdSlider].forEach((slider) => {
+    slider.classList.add("slider-container");
+    slider.insertBefore(createArrows("prev", leftArrow), slider.firstChild);
+    slider.insertBefore(createArrows("next", rightArrow), slider.firstChild);
+  });
 
   let firstSliderItems = document.querySelector(".first-slider-items"),
     secondSliderItems = document.querySelector(".second-slider-items"),

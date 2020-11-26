@@ -6,9 +6,33 @@ window.addEventListener("DOMContentLoaded", () => {
     return sliderItem(product);
   });
 
-  let sliderItems = document.getElementsByClassName("slider-items")[0];
+  let firstSlider = document.getElementById("first-slider"),
+    secondSlider = document.getElementById("second-slider"),
+    thirdSlider = document.getElementById("third-slider");
 
-  dataTags.forEach((tag) => sliderItems.appendChild(tag));
+  [firstSlider, secondSlider, thirdSlider].forEach((slider) =>
+    slider.classList.add("slider-container")
+  );
 
-  responsiveSlider();
+  let firstSliderItems = document.querySelector(".first-slider-items"),
+    secondSliderItems = document.querySelector(".second-slider-items"),
+    thirdSliderItems = document.querySelector(".third-slider-items");
+
+  [
+    firstSliderItems,
+    secondSliderItems,
+    thirdSliderItems,
+  ].forEach((slideritem) => slideritem.classList.add("slider-items"));
+
+  dataTags.forEach((tag) => firstSliderItems.appendChild(tag));
+
+  let firstCopy = firstSliderItems.cloneNode(true),
+    secondCopy = firstSliderItems.cloneNode(true);
+
+  secondSliderItems.appendChild(firstCopy);
+  thirdSliderItems.appendChild(secondCopy);
+
+  [firstSlider, secondSlider, thirdSlider].map((slider) =>
+    responsiveSlider(slider)
+  );
 });

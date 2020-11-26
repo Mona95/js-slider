@@ -1,3 +1,6 @@
+/**
+ * This Module holds all the Products data as an array of objects
+ */
 let dataModule = (function () {
   let data = [
     {
